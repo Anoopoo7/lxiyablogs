@@ -1,9 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap");
+
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
 }
 
 a {
@@ -23,4 +31,226 @@ a {
     color: white;
     background: black;
   }
+}
+.hh-50 {
+  height: 50vh;
+}
+
+
+/* homeheader */
+.home-header {
+  /* background-color: aqua; */
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home-card-content {
+  background-color: aqua;
+  padding: 25% 10%;
+  border-radius: 10px;
+  color: rgb(75, 75, 75);
+}
+
+.home-sub-card {
+  border: 1px solid aqua;
+  padding: 10% 5%;
+  border-radius: 10px;
+  margin: 10px;
+}
+.section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* card coming soon */
+
+.card_container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.card{
+  border-radius:14px;
+  padding:20px;
+  position:relative;
+}
+
+.f-1{
+  flex: 1;
+}
+
+.card .card-container{
+  width:100%;
+  height:100%;
+  position:relative;
+  background-color:#fff;
+  z-index:10;
+  border-radius:10px;
+  padding:15px;
+  padding-top:50px;
+}
+
+.card-container h4{
+  font-size:26px;
+  margin-bottom:10px;
+}
+
+.card p {
+  font-size:17px;
+}
+
+.card::before{
+  position:absolute;
+  content:'';
+  background-color:#fc5185;
+  height:35px;
+  width:35px;
+  top:3rem;
+  right:-23px;
+  transform:rotate(45deg);
+  z-index:10;
+  
+}
+
+
+.card::after{
+  position:absolute;
+  content:attr(data-label);
+  top:27px;
+  padding-left:20px;
+  padding:10px;
+  right:-31px;
+  width:8rem;
+  background-color:#fc5185;
+  z-index:12;
+  border-bottom-left-radius:20px;
+  border-top-left-radius:20px;
+  border-top-right-radius:10px;
+  color:#fff;
+}
+
+
+.horizondal-outer{
+  width: 100%;
+  overflow: hidden;
+}
+
+.horizondal-inner{
+  display: flex;
+  overflow-x: scroll
+}
+/* ?card -item */
+
+
+.item-card {
+  position: relative;
+  min-width: 250px;
+  height: 400px;
+  background: aqua;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.item-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: #f7f7f7;
+  transform: skewY(345deg);
+  transition: 0.5s;
+}
+
+.item-card:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+
+.item-card::after {
+  content: "CORSAIR";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 6em;
+  color: #0000001a;
+}
+
+.item-card .imgBox {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1;
+}
+/*
+.card .imgBox img {
+    max-width: 100%;
+    
+    transition: .5s;
+}
+
+.card:hover .imgBox img {
+    max-width: 50%;
+      
+}
+*/
+.item-card .contentBox {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.item-card .contentBox h3 {
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.caitem-cardrd .contentBox .price {
+  font-size: 24px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.item-card .contentBox .buy {
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: #267182;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s;
+}
+
+.caitem-cardrd:hover .contentBox .buy {
+  top: 0;
+  opacity: 1;
+}
+
+.mouse {
+  height: 250px;
+  width: auto;
 }
