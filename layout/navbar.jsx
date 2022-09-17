@@ -1,8 +1,9 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 const Navbar = () => {
   return (
     <div className="container navbar-light sticky-top bg-white">
       <nav className="navbar navbar-expand-lg">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="/">
           Navbar
         </a>
         <button
@@ -24,6 +25,11 @@ const Navbar = () => {
           <ul className="navbar-nav ml-auto mt-2 mt-lg-0 d-block d-lg-flex align-items-center">
             <li className="nav-item">
               <a className="nav-link" href="#">
+                Profile
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
                 Wishlist
               </a>
             </li>
@@ -40,11 +46,13 @@ const Navbar = () => {
                   placeholder="Search"
                   aria-label="Search"
                 />
-                <img
-                  src="/icons8-google-web-search-50.png"
-                  alt="search"
-                  width={42}
-                />
+                <a className="nav-link" href="/product-list/">
+                  <img
+                    src="/icons8-google-web-search-50.png"
+                    alt="search"
+                    width={42}
+                  />
+                </a>
               </form>
             </li>
           </ul>
