@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable @next/next/no-html-link-for-pages */
 const Navbar = () => {
   return (
@@ -24,7 +25,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul className="navbar-nav ml-auto mt-2 mt-lg-0 d-block d-lg-flex align-items-center">
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/profile">
                 Profile
               </a>
             </li>

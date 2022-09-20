@@ -74,7 +74,7 @@ a {
   flex: 1;
 }
 
-.card .card-container {
+.banner-card .card-container {
   width: 100%;
   height: 100%;
   position: relative;
@@ -90,11 +90,11 @@ a {
   margin-bottom: 10px;
 }
 
-.card p {
+.banner-card p {
   font-size: 17px;
 }
 
-.card::before {
+.banner-card::before {
   position: absolute;
   content: "";
   background-color: #fc5185;
@@ -106,7 +106,7 @@ a {
   z-index: 10;
 }
 
-.card::after {
+.banner-card::after {
   position: absolute;
   content: attr(data-label);
   top: 27px;
@@ -237,4 +237,28 @@ a {
 .mouse {
   height: 250px;
   width: auto;
+}
+
+
+/* profile menu */
+
+.profile-menu-link:hover{
+  color: #267182;
+  cursor: pointer;
+}
+
+.profile-menu-card .active{
+  color: #267182;
+  font-weight: bolder;
+}
+
+/* success-img */
+
+.success-image{
+  width: 100%;
+  height: 100vh;
+  object-fit: fill;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

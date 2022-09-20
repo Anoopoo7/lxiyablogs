@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import SingleCard from "./singleCard";
 
 const HomecardComponent = () => {
@@ -25,11 +26,11 @@ const HomecardComponent = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-8 d-flex align-items-stretch mt-5">
+            <div className="col-lg-8 d-flex align-items-stretch mt-5 border rounded">
               <div className="icon-boxes d-flex flex-column justify-content-center">
                 <div className="container-fluid">
                   <div className="card_container">
-                    <div className="card" data-label="Coming Soon">
+                    <div className="banner-card" data-label="Coming Soon">
                       <div className="f-1">
                         <img
                           src="https://images.prismic.io/slicemachine-blank/30d6602b-c832-4379-90ef-100d32c5e4c6_selfie.png?auto=compress,format"

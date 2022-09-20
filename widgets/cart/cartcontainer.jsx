@@ -3,8 +3,12 @@ import HeadingComponent from "../heading/headingcomponent";
 import CartPriceTable from "./cartPriceTable";
 import CartTablecomponent from "./cartTablecomponent";
 import CouponCodeContainer from "./couponcodeContainer";
+import Router from 'next/router'
 
 const CartContainer = () => {
+  const submitToCheckout=()=>{
+    Router.push("/checkout")
+  }
   return (
     <div className="container">
       <HeadingComponent />
@@ -17,7 +21,7 @@ const CartContainer = () => {
             <CouponCodeContainer />
           </div>
             <CartPriceTable />
-          <button className="btn btn-success mt-2 btn-block">Checkout</button>
+          <button className="btn btn-success mt-2 btn-block" onClick={submitToCheckout}>Checkout</button>
           <br />
           <TermsAndConditionComponet />
         </div>
