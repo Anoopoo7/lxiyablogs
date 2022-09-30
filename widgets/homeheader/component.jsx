@@ -8,39 +8,39 @@ const HomepageheaderComponent = ({ content }) => {
           data-aos="zoom-out"
         >
           <img
-            src="https://images.prismic.io/slicemachine-blank/30d6602b-c832-4379-90ef-100d32c5e4c6_selfie.png?auto=compress,format"
+            src={content?.image}
             className="img-fluid animated d-none d-lg-block w-50"
             alt="alt"
           />
           <img
-            src="https://images.prismic.io/slicemachine-blank/30d6602b-c832-4379-90ef-100d32c5e4c6_selfie.png?auto=compress,format"
+            src={content?.image}
             className="img-fluid animated d-block d-lg-none"
             alt="alt"
           />
           <h2>
             <br />
             <br />
-            Here we are !
+            {content?.heding_text}
           </h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-            quo, aut, maiores laboriosam iste mollitia dolorem dignissimos
-            eveniet quasi at aperiam vero, labore quidem. Odit.
-          </p>
+          <p>{content?.description}</p>
           <div className="d-flex">
-            <a
-              href="/"
-              className="btn btn-dark scrollto m-2"
-            >
-              Shop Now
-            </a>
-            <a
-              href="/"
-              className="glightbox btn-watch-video d-flex align-items-center m-2"
-            >
-              <i className="bi bi-play-circle"></i>
-              <span>Watch US</span>
-            </a>
+            {content?.dark_button?.active && (
+              <a
+                href={content?.dark_button?.link}
+                className="btn btn-dark scrollto m-2"
+              >
+                {content?.dark_button?.text}
+              </a>
+            )}
+            {content?.light_button?.active && (
+              <a
+                href={content?.light_button?.link}
+                className="glightbox btn-watch-video d-flex align-items-center m-2"
+              >
+                <i className="bi bi-play-circle"></i>
+                <span>{content?.light_button?.text}</span>
+              </a>
+            )}
           </div>
         </div>
       </div>

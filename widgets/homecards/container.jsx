@@ -1,7 +1,7 @@
 import HomecardComponent from "./component";
 
-const Homecardcontainer = () => {
-  return <HomecardComponent />;
+const Homecardcontainer = ({ content }) => {
+  return <HomecardComponent content={content} />;
 };
 
 export default Homecardcontainer;
