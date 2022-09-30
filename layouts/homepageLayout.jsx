@@ -4,10 +4,10 @@ import HeadingComponent from "../widgets/heading/headingcomponent";
 import Homecardcontainer from "../widgets/homecards/container";
 import HomeHeaderContainer from "../widgets/homeheader/container";
 
-const HomePageLayout = ({ content }) => {
+const HomePageLayout = () => {
   return (
     <>
-      <HomeHeaderContainer content={content} />
+      <HomeHeaderContainer />
       <div className="section">
         <Homecardcontainer />
       </div>

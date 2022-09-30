@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 const HomepageheaderComponent = ({ content }) => {
   return (
     <div classNameName="container">
@@ -7,34 +8,38 @@ const HomepageheaderComponent = ({ content }) => {
           data-aos="zoom-out"
         >
           <img
-            src={content?.hero_image?.url}
+            src="https://images.prismic.io/slicemachine-blank/30d6602b-c832-4379-90ef-100d32c5e4c6_selfie.png?auto=compress,format"
             className="img-fluid animated d-none d-lg-block w-50"
             alt="alt"
           />
           <img
-            src={content?.hero_image?.url}
+            src="https://images.prismic.io/slicemachine-blank/30d6602b-c832-4379-90ef-100d32c5e4c6_selfie.png?auto=compress,format"
             className="img-fluid animated d-block d-lg-none"
             alt="alt"
           />
           <h2>
             <br />
             <br />
-            {content?.hero_text}
+            Here we are !
           </h2>
-          <p>{content?.custom_description}</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+            quo, aut, maiores laboriosam iste mollitia dolorem dignissimos
+            eveniet quasi at aperiam vero, labore quidem. Odit.
+          </p>
           <div className="d-flex">
             <a
-              href={content?.block_button_link}
+              href="/"
               className="btn btn-dark scrollto m-2"
             >
-              {content?.bloc_button_text}
+              Shop Now
             </a>
             <a
-              href={content?.link_button_link}
+              href="/"
               className="glightbox btn-watch-video d-flex align-items-center m-2"
             >
               <i className="bi bi-play-circle"></i>
-              <span>{content?.link_button}</span>
+              <span>Watch US</span>
             </a>
           </div>
         </div>
