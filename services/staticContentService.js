@@ -11,4 +11,11 @@ const getPageContentByPageType = async (type) => {
   return null;
 };
 
-export { getPageContentByPageType };
+const getFeaturedItems = async () => {
+  const url = baseURL + "featured";
+  const response = await axios.get(url);
+  if (response?.status && response?.data) return response.data;
+  return null;
+};
+
+export { getPageContentByPageType, getFeaturedItems };

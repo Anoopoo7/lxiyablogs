@@ -3,8 +3,8 @@ import HeadingComponent from "../widgets/heading/headingcomponent";
 import Homecardcontainer from "../widgets/homecards/container";
 import HomeHeaderContainer from "../widgets/homeheader/container";
 
-const HomePageLayout = ({ content }) => {
-    return (
+const HomePageLayout = ({ content, featured }) => {
+  return (
     <>
       <HomeHeaderContainer content={content?.HomeHeaderContainer} />
       <div className="section">
@@ -12,7 +12,7 @@ const HomePageLayout = ({ content }) => {
       </div>
       <div className="container horizondal-outer">
         <HeadingComponent content={content?.HeadingComponent} />
-        <HorizondalcardContainer />
+        <HorizondalcardContainer featured={featured} />
       </div>
     </>
   );

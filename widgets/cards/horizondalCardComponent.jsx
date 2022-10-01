@@ -1,16 +1,12 @@
+/* eslint-disable react/jsx-key */
 import CardContainer from "./cardContainer";
 
-const HorizondalcardContainer = () => {
+const HorizondalcardContainer = ({ featured }) => {
   return (
     <div className="horizondal-inner">
-      <CardContainer />
-      <CardContainer />
-      <CardContainer />
-      <CardContainer />
-      <CardContainer />
-      <CardContainer />
-      <CardContainer />
-      <CardContainer />
+      {featured &&
+        Array.isArray(featured) &&
+        featured.map((item) => <CardContainer cardData={item} />)}
     </div>
   );
 };

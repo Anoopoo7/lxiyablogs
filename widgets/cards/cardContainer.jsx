@@ -1,9 +1,9 @@
 import CardComponent from "./cardComponent";
 
-const CardContainer = () => {
+const CardContainer = ({cardData}) => {
   return (
     <>
-      <CardComponent />
+      <CardComponent cardData={cardData} />
     </>
   );
 };
