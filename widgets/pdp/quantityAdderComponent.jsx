@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 
 const QuantityAdderComponet = () => {
   return (
@@ -11,7 +11,7 @@ const QuantityAdderComponet = () => {
         </div>
         <button className="btn ml-2 bg-primary text-light">Add to Cart</button>
         <button className="btn ml-2">
-            <Image src="/icons8-heart-64.png" alt="wishlist" width={23} />
+            <img src="/icons8-heart-64.png" alt="wishlist" width={23} />
             {/* <img src="/icons8-heart-50.png" alt="wishlist" width={23} /> */}
         </button>
       </div>

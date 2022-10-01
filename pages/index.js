@@ -7,7 +7,7 @@ import {
   getFeaturedItems,
 } from "../services/staticContentService";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const content = await getPageContentByPageType("HOME");
   const featured = await getFeaturedItems();
   return { props: { content, featured } };

@@ -1,7 +1,7 @@
 import ImageHandleComponent from "./imageHandleComponent";
 
-const ImageHandleContainer = () => {
-  return <ImageHandleComponent />;
+const ImageHandleContainer = ({images}) => {
+  return <ImageHandleComponent images={images} />;
 };
 
 export default ImageHandleContainer;

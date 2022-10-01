@@ -5,7 +5,7 @@ const CardComponent = ({ cardData }) => {
     <div className="item-card m-2">
       {cardData && Array.isArray(cardData) && cardData.length == 2 && (
         <>
-          <a href="/product/abc" className="text-dark">
+          <a href={`product${cardData[0]?.landingPageUrl}`} className="text-dark">
             <div className="imgBox">
               <img
                 src={cardData[0]?.images[0]}

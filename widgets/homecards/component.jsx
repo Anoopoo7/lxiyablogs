@@ -8,7 +8,7 @@ const HomecardComponent = ({ content }) => {
       <section id="why-us" className="why-us">
         <div className="container">
           <div className="row">
-            <div className="col-lg-4 d-flex align-items-center">
+            <div className="col-lg-5 d-flex align-items-center">
               {text_area && (
                 <div className="home-card-content">
                   <h3>{text_area.heading_text}</h3>
@@ -24,11 +24,11 @@ const HomecardComponent = ({ content }) => {
                 </div>
               )}
             </div>
-            <div className="col-lg-8 d-flex align-items-stretch mt-5 border rounded">
+            <div className="col-lg-7 d-flex align-items-stretch mt-5 p-2 rounded">
               <div className="icon-boxes d-flex flex-column justify-content-center">
                 <div className="container-fluid">
                   <div className="card_container">
-                    <div className="banner-card" data-label={offer_area?.label}>
+                    <div>
                       <div className="f-1">
                         <img
                           src={offer_area?.image}

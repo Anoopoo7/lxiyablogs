@@ -1,7 +1,9 @@
 import DescriptionHandleComponet from "./descriptionHandleComponet";
 
-const DescriptionHandleContainer = () => {
-  return <DescriptionHandleComponet />;
+const DescriptionHandleContainer = ({ products }) => {
+  const [product, inventory] = products;
+
+  return <DescriptionHandleComponet product={product} inventory={inventory.varients} />;
 };
 
 export default DescriptionHandleContainer;

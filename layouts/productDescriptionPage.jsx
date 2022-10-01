@@ -1,7 +1,7 @@
 import PdpContainer from "../widgets/pdp/pdpcontainer";
 
-const ProductDescriptionpage = () => {
-  return <PdpContainer />;
+const ProductDescriptionpage = ({ products }) => {
+  return <PdpContainer products={products} />;
 };
 
 export default ProductDescriptionpage;
