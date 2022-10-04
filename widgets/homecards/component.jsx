@@ -4,14 +4,16 @@ import SingleCard from "./singleCard";
 const HomecardComponent = ({ content }) => {
   const { text_area, offer_area } = content;
   return (
-    <div className="container ">
+    <div className="container mt-3">
       <section id="why-us" className="why-us">
         <div className="container">
           <div className="row">
             <div className="col-lg-5 d-flex align-items-center">
               {text_area && (
                 <div className="home-card-content">
-                  <h3>{text_area.heading_text}</h3>
+                  <h5>
+                    <b>{text_area.heading_text}</b>
+                  </h5>
                   <p>{text_area.description}</p>
                   <div className="text-center">
                     {text_area.button?.visible && (
@@ -29,10 +31,10 @@ const HomecardComponent = ({ content }) => {
                 <div className="container-fluid">
                   <div className="card_container">
                     <div>
-                      <div className="f-1">
+                      <div className="f-1 d-block">
                         <img
-                          src={offer_area?.image}
-                          className="img-fluid animated"
+                          src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAHYAnQMBIgACEQEDEQH/xAAWAAEBAQAAAAAAAAAAAAAAAAAAAQf/xAAWEAEBAQAAAAAAAAAAAAAAAAAAARH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMRQAAAAAAAVFEVBUVFARRUAABABQRUABQQUFRUAUBAABCKgiiAqiKqBAQAAQVFAgIoAAqAKAAACACAKAAAAKIoCAAAAAAACKIooAAIoAAACoAIoigIAIAAAKBAQUSKKAAAAAKAGoACiBRAAVABAAAVAVRFAAAVBQAQAQABUAAAAAVFQMBFAFAUEAUABEAAAAAAwABQRQAAAFAB//9k="
+                          className="img-fluid animated bg-success w-100 rounded"
                           alt="alt"
                         />
                       </div>

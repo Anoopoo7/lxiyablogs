@@ -7,11 +7,16 @@ const HomePageLayout = ({ content, featured }) => {
   return (
     <>
       <HomeHeaderContainer content={content?.HomeHeaderContainer} />
+      <div className="container horizondal-outer">
+        <HeadingComponent content={content?.HeadingComponent} />
+        <HorizondalcardContainer featured={featured} />
+      </div>
       <div className="section">
         <Homecardcontainer content={content?.Homecardcontainer} />
       </div>
       <div className="container horizondal-outer">
         <HeadingComponent content={content?.HeadingComponent} />
+        <HorizondalcardContainer featured={featured} />
         <HorizondalcardContainer featured={featured} />
       </div>
     </>

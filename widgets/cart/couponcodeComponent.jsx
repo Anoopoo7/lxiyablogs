@@ -1,7 +1,9 @@
 const CouponcodeComponet = () => {
   return (
     <>
-      <h3>Have coupon ?</h3>
+      <h5>
+        <b>Have coupon ?</b>
+      </h5>
       <br />
       <div className="input-group mb-3">
         <input

@@ -15,13 +15,13 @@ const CardComponent = ({ cardData }) => {
             </div>
           </a>
           <div className="contentBox text-decoration-none">
-            <h3>
-              {cardData[0]?.name.substring(0, 30)}
-              {cardData[0]?.name.length > 25 ? "..." : ""}
-            </h3>
-            <h2 className="price">
-              {cardData[1]?.defaultPrice}.<small>00</small> €
-            </h2>
+            <h6>
+              {cardData[0]?.name.substring(0, 20)}
+              {cardData[0]?.name.length > 20 ? "..." : ""}
+            </h6>
+            <h5 className="price">
+              $ {cardData[1]?.defaultPrice}.<small>00</small> <small className="small-cut">850.00</small>
+            </h5>
             <a href="#" className="buy">
               Buy Now
             </a>

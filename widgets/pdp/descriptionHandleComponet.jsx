@@ -4,7 +4,9 @@ import QuantityAdderComponet from "./quantityAdderComponent";
 const DescriptionHandleComponet = ({ product, inventory }) => {
   return (
     <>
-      <h1>{product?.name}</h1>
+      <h5>
+        <b> {product?.name}</b>
+      </h5>
       <br />
       <p>{product?.shortDescription}</p>
       <AvailableSizeComponent inventory={inventory} />

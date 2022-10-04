@@ -36,10 +36,17 @@ a {
   align-items: center;
 }
 .home-card-content {
-  background-color: aqua;
+  /* background-color: aqua; */
   padding: 25% 10%;
   border-radius: 10px;
   color: rgb(75, 75, 75);
+  box-shadow: 1px 5px 10px #00000077;
+}
+
+.small-cut{
+  font-size: 10px;
+  text-decoration: line-through;
+  color: #00000089;
 }
 
 .home-sub-card {
@@ -135,9 +142,9 @@ a {
 
 .item-card {
   position: relative;
-  min-width: 250px;
-  height: 400px;
-  background: aqua;
+  min-width: 225px;
+  height: 375px;
+  background: rgb(255, 194, 194);
   border-radius: 20px;
   overflow: hidden;
 }
@@ -148,7 +155,7 @@ a {
   top: -50%;
   width: 100%;
   height: 100%;
-  background: #f7f7f7;
+  background: #ffffff;
   transform: skewY(345deg);
   transition: 0.5s;
 }
@@ -158,7 +165,7 @@ a {
   transform: skewY(390deg);
 }
 
-.item-card::after {
+/* .item-card::after {
   content: "CORSAIR";
   position: absolute;
   bottom: 0;
@@ -166,7 +173,7 @@ a {
   font-weight: 600;
   font-size: 6em;
   color: #0000001a;
-}
+} */
 
 .item-card .imgBox {
   position: relative;
@@ -199,12 +206,9 @@ a {
   z-index: 2;
 }
 
-.item-card .contentBox h3 {
-  font-size: 18px;
+.item-card .contentBox h6 {
   color: white;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-weight:bold
 }
 
 .caitem-cardrd .contentBox .price {
@@ -220,7 +224,7 @@ a {
   opacity: 0;
   padding: 10px 30px;
   margin-top: 15px;
-  color: #267182;
+  color: #fdfdfd;
   text-decoration: none;
   background: #ffffff;
   border-radius: 30px;
@@ -261,4 +265,29 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* pdp */
+.pdp-img-container{
+  margin: 1px;
+  width: 20%;
+  height: 10vh;
+  object-fit:contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.1px solid rgba(0, 0, 0, 0.486);
+  margin: 5px;
+}
+.main-img{
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+  object-fit: fill;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img-main-img-tag{
+  width: 60%;
 }

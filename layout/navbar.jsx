@@ -3,12 +3,12 @@
 const Navbar = () => {
   return (
     <div className="container navbar-light sticky-top bg-white">
-      <nav className="navbar navbar-expand-lg">
+      <nav className="navbar navbar-expand-lg d-flex justify-content-between">
         <a className="navbar-brand" href="/">
-          Navbar
+          <b> Navbar</b>
         </a>
         <button
-          className="navbar-toggler"
+          className="navbar-toggler p-0 m-0 border-0"
           type="button"
           data-toggle="collapse"
           data-target="#navbarTogglerDemo02"
@@ -16,11 +16,7 @@ const Navbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <img
-            className="w-50 border-none"
-            src="/icons8-rocket-50.png"
-            alt=""
-          />
+          <img className="w-50" src="/icons8-menu-64.png" alt="" />
         </button>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul className="navbar-nav ml-auto mt-2 mt-lg-0 d-block d-lg-flex align-items-center">

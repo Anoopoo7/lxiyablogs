@@ -2,7 +2,7 @@ import DropdownComponent from "../../commons/dropdowncomponent";
 
 const CartTablecomponent = () => {
   return (
-    <table className="table table-striped border">
+    <table className="table border">
       <thead>
         <tr>
           <th scope="col">Name</th>
@@ -12,42 +12,27 @@ const CartTablecomponent = () => {
       </thead>
       <tbody>
         <tr>
-          <td>Mark</td>
+          <td>
+            <small>marko polo jeans (bl...</small>
+          </td>
           <td>
             <DropdownComponent />
           </td>
           <td>$ 100</td>
         </tr>
         <tr>
-          <td>Jacob</td>
+          <td>
+            <small>Men Regular Fit Stri...</small>
+          </td>
           <td>
             <DropdownComponent />
           </td>
           <td>$ 299</td>
         </tr>
         <tr>
-          <td>Larry</td>
           <td>
-            <DropdownComponent />
+            <small>Women Printed A-line...</small>
           </td>
-          <td>$ 199</td>
-        </tr>
-        <tr>
-          <td>Mark</td>
-          <td>
-            <DropdownComponent />
-          </td>
-          <td>$ 100</td>
-        </tr>
-        <tr>
-          <td>Jacob</td>
-          <td>
-            <DropdownComponent />
-          </td>
-          <td>$ 299</td>
-        </tr>
-        <tr>
-          <td>Larry</td>
           <td>
             <DropdownComponent />
           </td>
