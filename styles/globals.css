@@ -291,3 +291,11 @@ a {
 .img-main-img-tag{
   width: 60%;
 }
+
+/* carosal */
+
+.carosal-size{
+  width: 100%;
+  height: 40vh;
+  object-fit: fill;
+}

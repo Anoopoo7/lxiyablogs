@@ -1,5 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable @next/next/no-html-link-for-pages */
 const HomepageheaderComponent = ({ content }) => {
+  const contents = content || [];
   return (
     // <div classNameName="container">
     <div
@@ -8,76 +10,25 @@ const HomepageheaderComponent = ({ content }) => {
       data-ride="carousel"
     >
       <ol className="carousel-indicators">
-        <li
-          data-target="#carouselExampleIndicators"
-          data-slide-to="0"
-          className="active"
-        ></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+        {contents.map((each, i) => (
+          <li
+            key={i}
+            data-target="#carouselExampleIndicators"
+            data-slide-to={i}
+            className={`${i == 0 ? "active" : ""}`}
+          ></li>
+        ))}
       </ol>
       <div className="carousel-inner">
-        <div className="carousel-item active">
-          <img
-            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAHYAnQMBIgACEQEDEQH/xAAWAAEBAQAAAAAAAAAAAAAAAAAAAQf/xAAWEAEBAQAAAAAAAAAAAAAAAAAAARH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMRQAAAAAAAVFEVBUVFARRUAABABQRUABQQUFRUAUBAABCKgiiAqiKqBAQAAQVFAgIoAAqAKAAACACAKAAAAKIoCAAAAAAACKIooAAIoAAACoAIoigIAIAAAKBAQUSKKAAAAAKAGoACiBRAAVABAAAVAVRFAAAVBQAQAQABUAAAAAVFQMBFAFAUEAUABEAAAAAAwABQRQAAAFAB//9k="
-            className="d-block w-100 rounded img-fluid"
-            alt="..."
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAHYAnQMBIgACEQEDEQH/xAAWAAEBAQAAAAAAAAAAAAAAAAAAAQf/xAAWEAEBAQAAAAAAAAAAAAAAAAAAARH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMRQAAAAAAAVFEVBUVFARRUAABABQRUABQQUFRUAUBAABCKgiiAqiKqBAQAAQVFAgIoAAqAKAAACACAKAAAAKIoCAAAAAAACKIooAAIoAAACoAIoigIAIAAAKBAQUSKKAAAAAKAGoACiBRAAVABAAAVAVRFAAAVBQAQAQABUAAAAAVFQMBFAFAUEAUABEAAAAAAwABQRQAAAFAB//9k="
-            className="d-block w-100 rounded img-fluid"
-            alt="..."
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAHYAnQMBIgACEQEDEQH/xAAWAAEBAQAAAAAAAAAAAAAAAAAAAQf/xAAWEAEBAQAAAAAAAAAAAAAAAAAAARH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMRQAAAAAAAVFEVBUVFARRUAABABQRUABQQUFRUAUBAABCKgiiAqiKqBAQAAQVFAgIoAAqAKAAACACAKAAAAKIoCAAAAAAACKIooAAIoAAACoAIoigIAIAAAKBAQUSKKAAAAAKAGoACiBRAAVABAAAVAVRFAAAVBQAQAQABUAAAAAVFQMBFAFAUEAUABEAAAAAAwABQRQAAAFAB//9k="
-            className="d-block w-100 rounded img-fluid"
-            alt="..."
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAHYAnQMBIgACEQEDEQH/xAAWAAEBAQAAAAAAAAAAAAAAAAAAAQf/xAAWEAEBAQAAAAAAAAAAAAAAAAAAARH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMRQAAAAAAAVFEVBUVFARRUAABABQRUABQQUFRUAUBAABCKgiiAqiKqBAQAAQVFAgIoAAqAKAAACACAKAAAAKIoCAAAAAAACKIooAAIoAAACoAIoigIAIAAAKBAQUSKKAAAAAKAGoACiBRAAVABAAAVAVRFAAAVBQAQAQABUAAAAAVFQMBFAFAUEAUABEAAAAAAwABQRQAAAFAB//9k="
-            className="d-block w-100 rounded img-fluid"
-            alt="..."
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAHYAnQMBIgACEQEDEQH/xAAWAAEBAQAAAAAAAAAAAAAAAAAAAQf/xAAWEAEBAQAAAAAAAAAAAAAAAAAAARH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMRQAAAAAAAVFEVBUVFARRUAABABQRUABQQUFRUAUBAABCKgiiAqiKqBAQAAQVFAgIoAAqAKAAACACAKAAAAKIoCAAAAAAACKIooAAIoAAACoAIoigIAIAAAKBAQUSKKAAAAAKAGoACiBRAAVABAAAVAVRFAAAVBQAQAQABUAAAAAVFQMBFAFAUEAUABEAAAAAAwABQRQAAAFAB//9k="
-            className="d-block w-100 rounded img-fluid"
-            alt="..."
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAHYAnQMBIgACEQEDEQH/xAAWAAEBAQAAAAAAAAAAAAAAAAAAAQf/xAAWEAEBAQAAAAAAAAAAAAAAAAAAARH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMRQAAAAAAAVFEVBUVFARRUAABABQRUABQQUFRUAUBAABCKgiiAqiKqBAQAAQVFAgIoAAqAKAAACACAKAAAAKIoCAAAAAAACKIooAAIoAAACoAIoigIAIAAAKBAQUSKKAAAAAKAGoACiBRAAVABAAAVAVRFAAAVBQAQAQABUAAAAAVFQMBFAFAUEAUABEAAAAAAwABQRQAAAFAB//9k="
-            className="d-block w-100 rounded img-fluid"
-            alt="..."
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAHYAnQMBIgACEQEDEQH/xAAWAAEBAQAAAAAAAAAAAAAAAAAAAQf/xAAWEAEBAQAAAAAAAAAAAAAAAAAAARH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMRQAAAAAAAVFEVBUVFARRUAABABQRUABQQUFRUAUBAABCKgiiAqiKqBAQAAQVFAgIoAAqAKAAACACAKAAAAKIoCAAAAAAACKIooAAIoAAACoAIoigIAIAAAKBAQUSKKAAAAAKAGoACiBRAAVABAAAVAVRFAAAVBQAQAQABUAAAAAVFQMBFAFAUEAUABEAAAAAAwABQRQAAAFAB//9k="
-            className="d-block w-100 rounded img-fluid"
-            alt="..."
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAHYAnQMBIgACEQEDEQH/xAAWAAEBAQAAAAAAAAAAAAAAAAAAAQf/xAAWEAEBAQAAAAAAAAAAAAAAAAAAARH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMRQAAAAAAAVFEVBUVFARRUAABABQRUABQQUFRUAUBAABCKgiiAqiKqBAQAAQVFAgIoAAqAKAAACACAKAAAAKIoCAAAAAAACKIooAAIoAAACoAIoigIAIAAAKBAQUSKKAAAAAKAGoACiBRAAVABAAAVAVRFAAAVBQAQAQABUAAAAAVFQMBFAFAUEAUABEAAAAAAwABQRQAAAFAB//9k="
-            className="d-block w-100 rounded img-fluid"
-            alt="..."
-          />
-        </div>
+        {content.map((each, i) => (
+          <div key={i} className={`carousel-item carosal-size ${i == 0 ? "active" : ""}`}>
+            <img
+              src={each.image}
+              className="d-block w-100 rounded img-fluid h-100"
+              alt="..."
+            />
+          </div>
+        ))}
       </div>
       <b
         className="carousel-control-prev"

@@ -3,6 +3,7 @@ import SingleCard from "./singleCard";
 
 const HomecardComponent = ({ content }) => {
   const { text_area, offer_area } = content;
+  console.log(offer_area);
   return (
     <div className="container mt-3">
       <section id="why-us" className="why-us">
@@ -30,16 +31,17 @@ const HomecardComponent = ({ content }) => {
               <div className="icon-boxes d-flex flex-column justify-content-center">
                 <div className="container-fluid">
                   <div className="card_container">
-                    <div>
+                    <div className="d-flex flex-column justify-content-center align-items-center">
                       <div className="f-1 d-block">
                         <img
-                          src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAHYAnQMBIgACEQEDEQH/xAAWAAEBAQAAAAAAAAAAAAAAAAAAAQf/xAAWEAEBAQAAAAAAAAAAAAAAAAAAARH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMRQAAAAAAAVFEVBUVFARRUAABABQRUABQQUFRUAUBAABCKgiiAqiKqBAQAAQVFAgIoAAqAKAAACACAKAAAAKIoCAAAAAAACKIooAAIoAAACoAIoigIAIAAAKBAQUSKKAAAAAKAGoACiBRAAVABAAAVAVRFAAAVBQAQAQABUAAAAAVFQMBFAFAUEAUABEAAAAAAwABQRQAAAFAB//9k="
+                          src={offer_area?.image}
                           className="img-fluid animated bg-success w-100 rounded"
                           alt="alt"
                         />
                       </div>
-                      <div className="card-container f-1">
-                        <h4>{offer_area?.heading_text}</h4>
+                      <div className="card-container f-1 flex-column">
+                        <br />
+                        <h4 className="text-center">{offer_area?.heading_text}</h4>
                         <p>{offer_area?.description}</p>
                       </div>
                     </div>
