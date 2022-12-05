@@ -4,7 +4,7 @@ const RegisterComponent = () => {
       <br />
       <h3>Register </h3>
       <br />
-      <form action="bootstrapform.php" method="post">
+      <form>
         <div className="form-group">
           <label Htmlor="firstname">Name</label>
           <input
@@ -24,7 +24,7 @@ const RegisterComponent = () => {
           />
         </div>
         <div className="form-group">
-          <label Htmlor="Email1">Email address</label>
+          <label Htmlor="Email1">Email</label>
           <input
             type="email"
             className="form-control"

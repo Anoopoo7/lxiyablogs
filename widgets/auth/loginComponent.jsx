@@ -1,12 +1,16 @@
-const LoginComponent = () => {
+const LoginComponent = ({ handleLogin }) => {
   return (
     <>
       <br />
       <h3>Login </h3>
       <br />
-      <form action="bootstrapform.php" method="post">
+      <form
+        onSubmit={(e) => {
+          handleLogin(e);
+        }}
+      >
         <div className="form-group">
-          <label Htmlor="Email1">Email address</label>
+          <label Htmlor="Email1">Email</label>
           <input
             type="email"
             className="form-control"
