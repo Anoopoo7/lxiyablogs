@@ -5,10 +5,17 @@ import axios from "axios";
 const baseURL = backendUrl + "/product/api/v1/";
 
 const getProductByUrl = async (URL) => {
-  const url = baseURL +"url"+ URL;
+  const url = baseURL + "url" + URL;
   const response = await axios.get(url);
   if (response?.status && response?.data) return response.data;
   return null;
 };
 
-export { getProductByUrl };
+const getProductInventoryById = async (id) => {
+  const url = baseURL + "id/" + id;
+  const response = await axios.get(url);
+  if (response?.status && response?.data) return response.data;
+  return null;
+};
+
+export { getProductByUrl, getProductInventoryById };

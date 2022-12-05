@@ -4,12 +4,16 @@ const ImageHandleComponent = ({ images }) => {
   return (
     <>
       <div className="main-img">
-        <img src={images[0]} alt="image" className="img-fluid img-main-img-tag" />
+        <img
+          src={images[0]}
+          alt="image"
+          className="img-fluid img-main-img-tag"
+        />
       </div>
       <div className="img-options d-flex flex-wrap">
-        {images?.map((img) => (
+        {images?.map((img, i) => (
           <>
-            <div className="pdp-img-container rounded">
+            <div className="pdp-img-container rounded" key={i}>
               <img
                 src={img}
                 alt="image"
