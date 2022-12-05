@@ -15,4 +15,14 @@ const login = async (URL, body) => {
   return null;
 };
 
-export { login };
+const register = async (URL, body) => {
+  const url = baseURL + URL;
+  const response = await axios.post(url, body);
+  if (response?.status && response?.data) {
+    saveUser(response.data?.data);
+    return response.data;
+  }
+  return null;
+};
+
+export { login, register };

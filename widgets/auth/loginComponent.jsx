@@ -4,11 +4,7 @@ const LoginComponent = ({ handleLogin }) => {
       <br />
       <h3>Login </h3>
       <br />
-      <form
-        onSubmit={(e) => {
-          handleLogin(e);
-        }}
-      >
+      <form onSubmit={handleLogin}>
         <div className="form-group">
           <label Htmlor="Email1">Email</label>
           <input
