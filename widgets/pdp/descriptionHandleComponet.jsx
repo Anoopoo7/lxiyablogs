@@ -1,7 +1,12 @@
 import AvailableSizeComponent from "./availableSizecomponent";
 import QuantityAdderComponet from "./quantityAdderComponent";
 
-const DescriptionHandleComponet = ({ product, inventory }) => {
+const DescriptionHandleComponet = ({
+  product,
+  inventory,
+  selectedSKU,
+  setSelectedSKU,
+}) => {
   return (
     <>
       <h5>
@@ -9,7 +14,12 @@ const DescriptionHandleComponet = ({ product, inventory }) => {
       </h5>
       <br />
       <p>{product?.shortDescription}</p>
-      <AvailableSizeComponent inventory={inventory} />
+      setSelectedSKU={setSelectedSKU}
+      <AvailableSizeComponent
+        inventory={inventory}
+        setSelectedSKU={setSelectedSKU}
+      />
+      <h3>Rs. {selectedSKU?.salePrice}</h3>
       <QuantityAdderComponet inventory={inventory} />
       <hr />
       <small>

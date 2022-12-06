@@ -1,12 +1,21 @@
 /* eslint-disable @next/next/no-sync-scripts */
 import Head from "next/head";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 import ProfilePageLayout from "../layouts/profileLayout";
+import { getUser } from "../utils/userManager";
 
 const ProfilePage = () => {
+  const router = useRouter();
   const authenticationCheck = () => {
-    console.log("fdghjl")
+    const user = getUser();
+    if (null == user) {
+      router.push("/auth");
+    }
   };
-  authenticationCheck();
+  useEffect(() => {
+    authenticationCheck();
+  }, []);
   return (
     <div className="html">
       <Head>

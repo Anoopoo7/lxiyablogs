@@ -1,9 +1,8 @@
 import { useState } from "react";
-import PaginationComponent from "../pagination/paginationcomponent";
 import AddressContainer from "./addressContainer";
-import OrderComponent from "./orderComponent";
 import OrderContainer from "./orderContainer";
 import ProfileMenuComponent from "./profilemenuComponent";
+import { getUser } from "../../utils/userManager";
 
 const ProfilePageContainer = () => {
   const [selectedPage, setSelectedPage] = useState("order");
@@ -11,7 +10,7 @@ const ProfilePageContainer = () => {
     <div className="container">
       <div className="row">
         <div className="col-12 col-md-4">
-          <ProfileMenuComponent setSelectedPage={setSelectedPage}/>
+          <ProfileMenuComponent setSelectedPage={setSelectedPage} />
         </div>
         <div className="col-12 col-md-8 mt-3">
           {selectedPage == "order" && <OrderContainer />}

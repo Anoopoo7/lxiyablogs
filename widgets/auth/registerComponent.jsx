@@ -1,17 +1,17 @@
-const RegisterComponent = () => {
+const RegisterComponent = ({ handleregister }) => {
   return (
     <>
       <br />
       <h3>Register </h3>
       <br />
-      <form action="bootstrapform.php" method="post">
+      <form onSubmit={handleregister}>
         <div className="form-group">
           <label Htmlor="firstname">Name</label>
           <input
             type="text"
             className="form-control"
             id="exampleInputfirstname"
-            name="firstname"
+            name="name"
           />
         </div>
         <div className="form-group">
@@ -24,7 +24,7 @@ const RegisterComponent = () => {
           />
         </div>
         <div className="form-group">
-          <label Htmlor="Email1">Email address</label>
+          <label Htmlor="Email1">Email</label>
           <input
             type="email"
             className="form-control"
@@ -48,10 +48,14 @@ const RegisterComponent = () => {
             type="password"
             className="form-control"
             id="exampleInputPassword"
-            name="password"
+            name="repassword"
           />
         </div>
-        <button type="submit" className="btn btn-primary btn-block" name="create">
+        <button
+          type="submit"
+          className="btn btn-primary btn-block"
+          name="create"
+        >
           Register
         </button>
       </form>

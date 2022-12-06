@@ -6,7 +6,7 @@ const HorizondalcardContainer = ({ featured }) => {
     <div className="horizondal-inner">
       {featured &&
         Array.isArray(featured) &&
-        featured.map((item) => <CardContainer cardData={item} />)}
+        featured.map((item, i) => <CardContainer key={i} cardData={item} />)}
     </div>
   );
 };

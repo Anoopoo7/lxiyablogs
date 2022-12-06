@@ -1,7 +1,11 @@
 /* eslint-disable @next/next/no-sync-scripts */
 import Head from "next/head";
+import { useMemo } from "react";
 import ProductDescriptionpage from "../../layouts/productDescriptionPage";
-import { getProductByUrl } from "../../services/productServices";
+import {
+  getProductByUrl,
+  getProductInventoryById,
+} from "../../services/productServices";
 
 export async function getStaticPaths() {
   const res = [
@@ -23,11 +27,17 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const products = await getProductByUrl("/"+params.productId);
+  const products = await getProductByUrl("/" + params.productId);
   return { props: { products } };
 }
 
 const ProductPage = ({ products }) => {
+  const [product] = products?.data || [];
+  const { id } = product || {};
+  const productInventory = useMemo(async () => {
+    const response = await getProductInventoryById(id);
+    if (response?.data) return response.data;
+  }, [id]);
   return (
     <div className="html">
       <Head>
@@ -36,7 +46,10 @@ const ProductPage = ({ products }) => {
           href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         />
       </Head>
-      <ProductDescriptionpage products={products} />
+      <ProductDescriptionpage
+        products={products}
+        productInventory={productInventory}
+      />
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
