@@ -6,6 +6,9 @@ const DescriptionHandleComponet = ({
   inventory,
   selectedSKU,
   setSelectedSKU,
+  selectedQuantity,
+  incrementQuantity,
+  decrementQuantity,
 }) => {
   return (
     <>
@@ -14,13 +17,18 @@ const DescriptionHandleComponet = ({
       </h5>
       <br />
       <p>{product?.shortDescription}</p>
-      setSelectedSKU={setSelectedSKU}
       <AvailableSizeComponent
         inventory={inventory}
         setSelectedSKU={setSelectedSKU}
       />
-      <h3>Rs. {selectedSKU?.salePrice}</h3>
-      <QuantityAdderComponet inventory={inventory} />
+      <h3>Rs. {selectedQuantity * selectedSKU?.salePrice}</h3>
+      <QuantityAdderComponet
+        inventory={inventory}
+        setSelectedSKU={setSelectedSKU}
+        selectedQuantity={selectedQuantity}
+        incrementQuantity={incrementQuantity}
+        decrementQuantity={decrementQuantity}
+      />
       <hr />
       <small>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum optio
