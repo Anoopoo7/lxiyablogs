@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
-import AvailableSizeComponent from "./availableSizecomponent";
 import DescriptionHandleContainer from "./descriptionhandleContainer";
 import ImageHandleContainer from "./imageHandleContainer";
-import QuantityAdderComponet from "./quantityAdderComponent";
 
 const PdpContainer = ({ products, productInventory }) => {
   const [inventory, setInventory] = useState({});
   const [product] = products?.data;
   const images = product?.images;
-  console.log(product);
   useEffect(() => {
     productInventory.then((req) => {
       setInventory(req);
