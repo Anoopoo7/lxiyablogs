@@ -7,7 +7,10 @@ const saveUser = (details) => {
 
 const getUser = () => {
   const userdetails = user.USER_DETAILS;
-  return JSON.parse(localStorage?.getItem(userdetails)) || null;
+  if(typeof localStorage !== "undefined"){
+    return JSON.parse(localStorage?.getItem(userdetails)) || null;
+  }
+  return {};
 };
 
 export { saveUser, getUser };
