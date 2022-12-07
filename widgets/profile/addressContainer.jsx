@@ -2,13 +2,16 @@ import PaginationComponent from "../pagination/paginationcomponent";
 import AddressCardComponent from "./addressCardComponent";
 import AddressComponent from "./addressComponent";
 
-const AddressContainer = () => {
+const AddressContainer = ({ addresses }) => {
   return (
     <div className="row">
       <div className="col-12 col-md-6">
-        <AddressCardComponent />
-        <AddressCardComponent />
-        <AddressCardComponent />
+        {addresses &&
+          Array.isArray(addresses) &&
+          addresses.map((each, i) => (
+            <AddressCardComponent address={each} key={i} />
+          ))}
+
         <div className="d-flex justify-content-center">
           <PaginationComponent />
         </div>
