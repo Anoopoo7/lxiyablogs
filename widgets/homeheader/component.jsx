@@ -3,7 +3,6 @@
 const HomepageheaderComponent = ({ content }) => {
   const contents = content || [];
   return (
-    // <div classNameName="container">
     <div
       id="carouselExampleIndicators"
       className="carousel slide container mb-3"
