@@ -1,32 +1,18 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import AddressContainer from "./addressContainer";
 import OrderContainer from "./orderContainer";
 import ProfileMenuComponent from "./profilemenuComponent";
+import { getUserAddresses } from "../../services/userServices";
 
 const ProfilePageContainer = () => {
   const [selectedPage, setSelectedPage] = useState("order");
-  const [addresses, SetAddresses] = useState([
-    {
-      buildNo: "MK001",
-      city: "dubai",
-      area: "fetival mall",
-      pincode: "10091",
-      phone1: "58135656",
-      phone2: "58135656",
-      state: "qatar",
-      default: true,
-    },
-    {
-      buildNo: "MK002",
-      city: "sharja",
-      area: "sharja mall",
-      pincode: "90091",
-      phone1: "58135656",
-      phone2: "58135656",
-      state: "homnkong",
-      default: false,
-    },
-  ]);
+  const [addresses, SetAddresses] = useState([]);
+
+  useMemo(async () => {
+    const response = await getUserAddresses();
+    SetAddresses(response.data);
+  }, []);
+
   return (
     <div className="container">
       <div className="row">

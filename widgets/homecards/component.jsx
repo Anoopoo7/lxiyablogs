@@ -3,7 +3,6 @@ import SingleCard from "./singleCard";
 
 const HomecardComponent = ({ content }) => {
   const { text_area, offer_area } = content;
-  console.log(offer_area);
   return (
     <div className="container mt-3">
       <section id="why-us" className="why-us">
