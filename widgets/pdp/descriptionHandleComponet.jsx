@@ -16,11 +16,13 @@ const DescriptionHandleComponet = ({
         <b> {product?.name}</b>
       </h5>
       <br />
-      <p>{product?.shortDescription}</p>
+      <p className="text-muted">{product?.shortDescription}</p>
+      <br /><br />
       <AvailableSizeComponent
         inventory={inventory}
         setSelectedSKU={setSelectedSKU}
       />
+      <br /><br />
       <h3>Rs. {selectedQuantity * selectedSKU?.salePrice}</h3>
       <QuantityAdderComponet
         inventory={inventory}
@@ -30,7 +32,7 @@ const DescriptionHandleComponet = ({
         decrementQuantity={decrementQuantity}
       />
       <hr />
-      <small>
+      <small className="text-muted">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum optio
         dicta cupiditate illo, alias dolore ipsam sed nesciunt, beatae sint
         dignissimos accusantium praesentium obcaecati. Fuga totam enim
