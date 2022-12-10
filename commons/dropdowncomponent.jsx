@@ -1,4 +1,4 @@
-const DropdownComponent = () => {
+const DropdownComponent = ({ quantity }) => {
   return (
     <div className="dropdown">
       <button
@@ -9,7 +9,7 @@ const DropdownComponent = () => {
         aria-haspopup="true"
         aria-expanded="false"
       >
-        x0
+        x{quantity}
       </button>
       <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <a className="dropdown-item" href="#">

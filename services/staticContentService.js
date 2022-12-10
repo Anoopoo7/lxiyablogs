@@ -2,7 +2,7 @@
 import { backendUrl } from "../next.config";
 import axios from "axios";
 
-const baseURL = backendUrl + "/static/api/v1/";
+const baseURL = backendUrl + "/api/v1/static/";
 
 const getPageContentByPageType = async (type) => {
   const url = baseURL + "page/" + type;

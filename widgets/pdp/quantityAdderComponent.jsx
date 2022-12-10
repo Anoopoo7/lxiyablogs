@@ -2,6 +2,7 @@ const QuantityAdderComponet = ({
   selectedQuantity,
   incrementQuantity,
   decrementQuantity,
+  addToCartHandle,
 }) => {
   return (
     <>
@@ -17,7 +18,12 @@ const QuantityAdderComponet = ({
             +
           </button>
         </div>
-        <button className="btn ml-2 bg-primary text-light">Add to Cart</button>
+        <button
+          className="btn ml-2 bg-primary text-light"
+          onClick={addToCartHandle}
+        >
+          Add to Cart
+        </button>
         <button className="btn ml-2">
           {/* <img src="/icons8-heart-64.png" alt="wishlist" width={23} /> */}
           <img src="/icons8-heart-50.png" alt="wishlist" width={23} />

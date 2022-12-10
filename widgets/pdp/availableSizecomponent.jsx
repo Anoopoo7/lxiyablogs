@@ -1,11 +1,13 @@
 /* eslint-disable react/jsx-key */
 const AvailableSizeComponent = ({
   inventory,
+  setVarient,
   setSelectedSKU,
-  selectedQuantity,
+
 }) => {
   const handleChange = (e) => {
-    setSelectedSKU(e);
+    setVarient(e)
+    setSelectedSKU(inventory[e]);
   };
   return (
     <>
@@ -20,7 +22,7 @@ const AvailableSizeComponent = ({
               name="inlineRadioOptions"
               id="inlineRadio1"
               value="option1"
-              onClick={() => handleChange(inventory[key])}
+              onClick={() => handleChange(key)}
             />
             <label className="form-check-label" htmlFor="inlineRadio1">
               {key}

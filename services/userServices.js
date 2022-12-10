@@ -3,7 +3,7 @@ import { backendUrl } from "../next.config";
 import axios from "axios";
 import { saveUser, getUser } from "../utils/userManager";
 
-const baseURL = backendUrl + "/users/api/v1";
+const baseURL = backendUrl + "/api/v1/users";
 
 const login = async (URL, body) => {
   const url = baseURL + URL;

@@ -1,6 +1,11 @@
 import DropdownComponent from "../../commons/dropdowncomponent";
 
-const CartTablecomponent = () => {
+const CartTablecomponent = ({ cart }) => {
+  const lineItems = cart?.lineItems;
+
+  const limit = (string) => {
+    return string.substring(0, 15);
+  };
   return (
     <table className="table border">
       <thead>
@@ -11,33 +16,21 @@ const CartTablecomponent = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>
-            <small>marko polo jeans (bl...</small>
-          </td>
-          <td>
-            <DropdownComponent />
-          </td>
-          <td>$ 100</td>
-        </tr>
-        <tr>
-          <td>
-            <small>Men Regular Fit Stri...</small>
-          </td>
-          <td>
-            <DropdownComponent />
-          </td>
-          <td>$ 299</td>
-        </tr>
-        <tr>
-          <td>
-            <small>Women Printed A-line...</small>
-          </td>
-          <td>
-            <DropdownComponent />
-          </td>
-          <td>$ 199</td>
-        </tr>
+        {lineItems &&
+          Array.isArray(lineItems) &&
+          lineItems.map((each, i) => (
+            <tr key={i}>
+              <td title={`${each.name} [ ${each.varient} ]`}>
+                <a href={`/product/${each.landingPageUrl}`}>
+                  {limit(each.name)}...
+                </a>
+              </td>
+              <td>
+                <DropdownComponent quantity={each.quantity} />
+              </td>
+              <td>$ {each.price}.00</td>
+            </tr>
+          ))}
       </tbody>
     </table>
   );

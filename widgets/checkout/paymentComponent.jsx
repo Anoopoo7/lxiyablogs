@@ -10,7 +10,7 @@ const PaymentComponent = () => {
           name="exampleRadios"
           id="exampleRadios1"
           value="option1"
-          checked
+          defaultChecked={true}
         />
         <label className="form-check-label" htmlFor="exampleRadios1">
           COD
@@ -37,7 +37,9 @@ const PaymentComponent = () => {
         nesciunt ex exercitationem repellendus necessitatibus provident.
         Facilis, accusamus!
       </p>
-      <button className="btn btn-success btn-block btn-lg-flex">Place Order</button>
+      <button className="btn btn-success btn-block btn-lg-flex">
+        Place Order
+      </button>
     </div>
   );
 };

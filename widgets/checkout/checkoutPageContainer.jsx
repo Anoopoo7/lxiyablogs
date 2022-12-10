@@ -15,13 +15,16 @@ const CheckoutPageContainer = () => {
 
   const handleAddress = (e) => {
     e.preventDefault();
-    const buildingNo = e.target.buildingNo.value;
-    const area = e.target.area.value;
-    const city = e.target.city.value;
-    const state = e.target.state.value;
-    const pincode = e.target.pincode.value;
-    const phoneOne = e.target.phoneOne.value;
-    const phoneTwo = e.target.phoneTwo.value;
+    const billingAddress = {
+      buildingNo: e.target.buildingNo.value,
+      area: e.target.area.value,
+      city: e.target.city.value,
+      state: e.target.state.value,
+      pincode: e.target.pincode.value,
+      phoneOne: e.target.phoneOne.value,
+      phoneTwo: e.target.phoneTwo.value,
+    };
+    console.log(billingAddress);
   };
 
   return (

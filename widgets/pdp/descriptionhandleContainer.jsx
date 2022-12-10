@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import DescriptionHandleComponet from "./descriptionHandleComponet";
+import { addItemToCart } from "../../services/orderService";
+import { useRouter } from "next/router";
 
 const DescriptionHandleContainer = ({ products, inventory }) => {
   const [product, dummyInventory] = products;
   const [selectedSKU, setSelectedSKU] = useState({
     salePrice: "select the option",
   });
+  const router = useRouter();
+  const [varient, setVarient] = useState(null);
   const [selectedQuantity, setSelectedQuantity] = useState(1);
 
   const decrementQuantity = () => {
@@ -23,6 +27,18 @@ const DescriptionHandleContainer = ({ products, inventory }) => {
     setSelectedSKU(dummyInventory.varients[key]);
   }, []);
 
+  const addToCartHandle = async () => {
+    const body = {
+      productId: product.id,
+      quantity: selectedQuantity,
+      varient: varient,
+    };
+    const response = await addItemToCart(body);
+    if (response.data) {
+      router.push("/cart")
+    }
+  };
+
   return (
     <DescriptionHandleComponet
       product={product}
@@ -32,6 +48,8 @@ const DescriptionHandleContainer = ({ products, inventory }) => {
       selectedQuantity={selectedQuantity}
       decrementQuantity={decrementQuantity}
       incrementQuantity={incrementQuantity}
+      addToCartHandle={addToCartHandle}
+      setVarient={setVarient}
     />
   );
 };

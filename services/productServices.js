@@ -2,7 +2,7 @@
 import { backendUrl } from "../next.config";
 import axios from "axios";
 
-const baseURL = backendUrl + "/product/api/v1/";
+const baseURL = backendUrl + "/api/v1/product/";
 
 const getProductByUrl = async (URL) => {
   const url = baseURL + "url" + URL;

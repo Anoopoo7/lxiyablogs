@@ -4,8 +4,10 @@ import QuantityAdderComponet from "./quantityAdderComponent";
 const DescriptionHandleComponet = ({
   product,
   inventory,
+  setVarient,
   selectedSKU,
   setSelectedSKU,
+  addToCartHandle,
   selectedQuantity,
   incrementQuantity,
   decrementQuantity,
@@ -17,12 +19,15 @@ const DescriptionHandleComponet = ({
       </h5>
       <br />
       <p className="text-muted">{product?.shortDescription}</p>
-      <br /><br />
+      <br />
+      <br />
       <AvailableSizeComponent
         inventory={inventory}
         setSelectedSKU={setSelectedSKU}
+        setVarient={setVarient}
       />
-      <br /><br />
+      <br />
+      <br />
       <h3>Rs. {selectedQuantity * selectedSKU?.salePrice}</h3>
       <QuantityAdderComponet
         inventory={inventory}
@@ -30,6 +35,7 @@ const DescriptionHandleComponet = ({
         selectedQuantity={selectedQuantity}
         incrementQuantity={incrementQuantity}
         decrementQuantity={decrementQuantity}
+        addToCartHandle={addToCartHandle}
       />
       <hr />
       <small className="text-muted">
