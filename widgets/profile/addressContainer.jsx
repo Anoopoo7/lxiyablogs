@@ -2,7 +2,7 @@ import PaginationComponent from "../pagination/paginationcomponent";
 import AddressCardComponent from "./addressCardComponent";
 import AddressComponent from "./addressComponent";
 
-const AddressContainer = ({ addresses }) => {
+const AddressContainer = ({ addresses, handleAddress }) => {
   return (
     <div className="row">
       <div className="col-12 col-md-6">
@@ -12,12 +12,14 @@ const AddressContainer = ({ addresses }) => {
             <AddressCardComponent address={each} key={i} />
           ))}
 
-        <div className="d-flex justify-content-center">
-          <PaginationComponent />
-        </div>
+        {addresses && Array.isArray(addresses) && addresses.length > 3 && (
+          <div className="d-flex justify-content-center">
+            <PaginationComponent />
+          </div>
+        )}
       </div>
       <div className="col-12 col-md-6">
-        <AddressComponent />
+        <AddressComponent handleAddress={handleAddress} />
       </div>
     </div>
   );

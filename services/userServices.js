@@ -35,4 +35,15 @@ const getUserAddresses = async () => {
   return null;
 };
 
-export { login, register, getUserAddresses };
+const saveUserAddresses = async (body) => {
+  const user = getUser();
+  const url = baseURL + "/address";
+  body.userId = user?.id;
+  const response = await axios.post(url, body);
+  if (response?.status && response?.data) {
+    return response.data;
+  }
+  return null;
+};
+
+export { login, register, getUserAddresses, saveUserAddresses };

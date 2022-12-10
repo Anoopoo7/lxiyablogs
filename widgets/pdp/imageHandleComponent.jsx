@@ -1,19 +1,23 @@
 /* eslint-disable react/jsx-key */
+
+import { useState } from "react";
+
 /* eslint-disable @next/next/no-img-element */
 const ImageHandleComponent = ({ images }) => {
+  const [prevImg, setPrevImage] = useState(images[0]);
   return (
     <>
       <div className="main-img">
-        <img
-          src={images[0]}
-          alt="image"
-          className="img-fluid img-main-img-tag"
-        />
+        <img src={prevImg} alt="image" className="img-fluid img-main-img-tag" />
       </div>
       <div className="img-options d-flex flex-wrap">
         {images?.map((img, i) => (
           <>
-            <div className="pdp-img-container rounded" key={i}>
+            <div
+              className="pdp-img-container rounded"
+              key={i}
+              onClick={() => setPrevImage(img)}
+            >
               <img
                 src={img}
                 alt="image"

@@ -1,5 +1,4 @@
 const AddressCardComponent = ({ address }) => {
-  console.log(address);
   return (
     <div
       className={`card ${

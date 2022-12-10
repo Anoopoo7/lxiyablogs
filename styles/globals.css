@@ -299,3 +299,9 @@ a {
   height: 40vh;
   object-fit: fill;
 }
+
+.form-outer{
+  border: 1px solid rgba(0, 0, 0, 0.521);
+  padding: 100px 20px;
+  border-radius: 10px;
+}

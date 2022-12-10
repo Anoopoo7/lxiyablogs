@@ -1,10 +1,7 @@
-const RegisterComponent = ({ handleregister }) => {
+const RegisterComponent = ({ handleregister, setToggle }) => {
   return (
     <>
-      <br />
-      <h3>Register </h3>
-      <br />
-      <form onSubmit={handleregister}>
+      <form onSubmit={handleregister} className="form-outer">
         <div className="form-group">
           <label Htmlor="firstname">Name</label>
           <input
@@ -58,6 +55,16 @@ const RegisterComponent = ({ handleregister }) => {
         >
           Register
         </button>
+        <br />
+        <i>
+          if you aready have an account with us please {" "}
+          <b
+            style={{ cursor: "pointer" }}
+            onClick={() => setToggle((prev) => !prev)}
+          >
+            login
+          </b>
+        </i>
       </form>
     </>
   );

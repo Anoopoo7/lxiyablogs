@@ -2,9 +2,11 @@ import LoginComponent from "./loginComponent";
 import RegisterComponent from "./registerComponent";
 import { login, register } from "../../services/userServices";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 const AuthContainer = () => {
   const router = useRouter();
+  const [toggle, setToggle] = useState(true);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -34,13 +36,15 @@ const AuthContainer = () => {
   return (
     <>
       <div className="container">
-        <div className="row">
-          <div className="col-12 col-lg-6">
-            <LoginComponent handleLogin={handleLogin} />
-          </div>
-          <div className="col-12 col-lg-6">
-            <RegisterComponent handleregister={handleregister} />
-          </div>
+        <div className="home-header">
+          {toggle ? (
+            <LoginComponent handleLogin={handleLogin} setToggle={setToggle} />
+          ) : (
+            <RegisterComponent
+              handleregister={handleregister}
+              setToggle={setToggle}
+            />
+          )}
         </div>
       </div>
     </>

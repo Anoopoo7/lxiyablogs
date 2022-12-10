@@ -1,10 +1,7 @@
-const LoginComponent = ({ handleLogin }) => {
+const LoginComponent = ({ handleLogin, setToggle }) => {
   return (
     <>
-      <br />
-      <h3>Login </h3>
-      <br />
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleLogin} className="form-outer">
         <div className="form-group">
           <label Htmlor="Email1">Email</label>
           <input
@@ -31,6 +28,16 @@ const LoginComponent = ({ handleLogin }) => {
         >
           Login
         </button>
+        <br />
+        <i>
+          if you dont have an account with us please consider{" "}
+          <b
+            style={{ cursor: "pointer" }}
+            onClick={() => setToggle((prev) => !prev)}
+          >
+            registeration
+          </b>
+        </i>
       </form>
     </>
   );
